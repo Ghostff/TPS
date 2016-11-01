@@ -76,4 +76,26 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
         return false;
     }
+
+    public bool ConsumeItem(string name)
+    {
+        // Проверка наличия элемента среди интвентаря
+        if(_items.ContainsKey(name))
+        {
+            _items[name]--;
+            if(_items[name] == 0) // Удаление записи, если количество становится равным 0
+            {
+                _items.Remove(name);
+            }
+            else // Реакция в случае отсутствия в интвентаре нужного элемента
+            {
+                Debug.Log("cannot consume " + name);
+
+                return false;
+            }
+        }
+        DisplayItems();
+
+        return true;
+    }
 }
