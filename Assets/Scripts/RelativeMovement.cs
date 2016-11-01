@@ -14,6 +14,8 @@ public class RelativeMovement : MonoBehaviour {
     public float terminalVelocity = -10.0f;
     public float minFall = -1.5f;
 
+    public float pushForce = 3.0f;
+
     private float _vertSpeed;
 
     private Animator _animator;
@@ -114,5 +116,13 @@ public class RelativeMovement : MonoBehaviour {
     void OnControllerColliderHit(ControllerColliderHit hit) // При распозновании столкновения, данные сохраняются в callback-е
     {
         _contact = hit;
+
+        Rigidbody body = hit.collider.attachedRigidbody; // Проверка, есть ли у участвующего в столкновении объекта компонент Rigitbody,
+        if(body != null && !body.isKinematic)            // обеспечивающий реакцию на приложенную силу
+        {
+            body.velocity = hit.moveDirection * pushForce; // Назначение физическому телу скорости
+        }
     }
+
+    
 }

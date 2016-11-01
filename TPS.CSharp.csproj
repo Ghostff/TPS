@@ -66,7 +66,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BasicUI.cs" />
+    <Compile Include="Assets\Scripts\CollectibleItem.cs" />
+    <Compile Include="Assets\Scripts\ColorChangeDevice.cs" />
+    <Compile Include="Assets\Scripts\DeviceOperator.cs" />
+    <Compile Include="Assets\Scripts\DeviceTrigger.cs" />
+    <Compile Include="Assets\Scripts\DoorOpenDevice.cs" />
+    <Compile Include="Assets\Scripts\IGameManager.cs" />
+    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\ManagerStatus.cs" />
+    <Compile Include="Assets\Scripts\Managers.cs" />
     <Compile Include="Assets\Scripts\OrbitCamera.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\RelativeMovement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
