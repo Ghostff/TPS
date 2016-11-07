@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
     public string equippedItem { get; private set;  }
 
-    public void Startup()
+    public void Startup(NetworkService network)
     {
         Debug.Log("Inventory manager starting..."); // Сюда идут все задачи запуска с долгим временем выплнения
 
